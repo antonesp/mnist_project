@@ -114,7 +114,7 @@ stack-data==0.6.3
 sympy==1.14.0
 terminado==0.18.1
 threadpoolctl==3.6.0
-tinycss2==1.4.0
+tinycss2==1.5.1
 torch==2.9.1 ; sys_platform == 'darwin'
 torch==2.9.1+cpu ; sys_platform != 'darwin'
 torchvision==0.24.1 ; (platform_machine == 'aarch64' and platform_python_implementation == 'CPython' and sys_platform == 'linux') or sys_platform == 'darwin'
