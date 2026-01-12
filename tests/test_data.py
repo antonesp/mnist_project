@@ -1,9 +1,12 @@
-from pathlib import Path
-from tests import _PATH_DATA
-import torch
-from src.ml_ops.data import corrupt_mnist
-import pytest
 import os
+from pathlib import Path
+
+import pytest
+import torch
+
+from src.ml_ops.data import corrupt_mnist
+from tests import _PATH_DATA
+
 
 @pytest.mark.skipif(not os.path.exists("ml_ops/data"), reason="Data files not found")
 def test_my_dataset():

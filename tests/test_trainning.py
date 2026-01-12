@@ -1,7 +1,7 @@
 from pathlib import Path
-from tests import  _PROJECT_ROOT
-from src.ml_ops.train import train
 
+from src.ml_ops.train import train
+from tests import _PROJECT_ROOT
 
 
 def test_train():

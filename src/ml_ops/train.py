@@ -1,13 +1,13 @@
-from src.ml_ops.model import Model
-import torch
-import matplotlib.pyplot as plt
-from src.ml_ops.data import corrupt_mnist
 from pathlib import Path
-import wandb
+
+import matplotlib.pyplot as plt
+import torch
 import typer
+import wandb
 from sklearn.metrics import RocCurveDisplay, accuracy_score, f1_score, precision_score, recall_score
 
-
+from src.ml_ops.data import corrupt_mnist
+from src.ml_ops.model import Model
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 

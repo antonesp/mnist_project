@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import matplotlib.pyplot as plt  # only needed for plotting
 import torch
 from mpl_toolkits.axes_grid1 import ImageGrid  # only needed for plotting
-from pathlib import Path
+
 
 def normalize(images):
     return (images - torch.mean(images)) / torch.std(images)

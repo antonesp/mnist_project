@@ -1,8 +1,11 @@
 from pathlib import Path
-from tests import _PATH_DATA, _PROJECT_ROOT
-import torch
-from src.ml_ops.model import Model
+
 import pytest
+import torch
+
+from src.ml_ops.model import Model
+from tests import _PATH_DATA, _PROJECT_ROOT
+
 
 @pytest.mark.parametrize("batch_size", [32, 64])
 def test_model(batch_size: int) -> None:

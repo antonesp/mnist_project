@@ -1,7 +1,9 @@
-from model import Model
-import torch
-from data import corrupt_mnist
 import argparse
+
+import torch
+from model import Model
+
+from data import corrupt_mnist
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 
