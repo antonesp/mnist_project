@@ -10,4 +10,6 @@ def test_model(batch_size: int) -> None:
 
     dummy_input = torch.randn(batch_size, 1, 28, 28)
 
+    print("the new yaml file did something")
+
     assert model(dummy_input).shape == (batch_size,10), "Wrong dimensions of output"
