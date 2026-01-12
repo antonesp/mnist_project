@@ -1,0 +1,87 @@
+[project]
+name = "ml_ops"
+version = "0.1.0"
+description = "My ML Ops project"
+readme = "README.md"
+requires-python = "==3.12.3"
+
+dependencies = [
+    "gdown>=5.2.0",
+    "hydra-core>=1.3.2",
+    "jupyter>=1.1.1",
+    "loguru>=0.7.3",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.0",
+    "omegaconf>=2.3.0",
+    "pandas>=2.3.3",
+    "python-dotenv>=1.2.1",
+    "scikit-learn>=1.2.2",
+    "snakeviz>=2.2.2",
+    "torch==2.5.1",
+    "torch-tb-profiler>=0.4.3",
+    "torchvision==0.20.1",
+    "typer>=0.21.0",
+    "wandb>=0.23.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage>=7.13.1",
+    "pytest>=9.0.2",
+    "ruff>=0.14.10",
+]
+
+# -----------------------------
+# uv
+# -----------------------------
+[tool.uv]
+package = true
+
+[tool.coverage.run]
+omit = ["tests/*"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+torchvision = [{ index = "pytorch-cpu" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.workspace]
+members = [
+    ".",
+]
+
+# -----------------------------
+# setuptools (IMPORTANT PART)
+# -----------------------------
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "coverage>=7.13.1",
+    "pytest>=9.0.2",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# -----------------------------
+# Console entry points
+# -----------------------------
+[project.scripts]
+train = "ml_ops.train:main"
+
+# -----------------------------
+# Ruff
+# -----------------------------
+[tool.ruff]
+lint.select = ["I"]
+line-length = 120
