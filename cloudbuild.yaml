@@ -1,0 +1,17 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Build container image'
+  args: [
+    'build',
+    '-t', 'europe-north2-docker.pkg.dev/vigilant-willow-484208-f0/sklearn-test/sklearn_image',
+    '-f', 'sklearn-test/Dockerfile',
+    './sklearn-test',
+  ]
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Push container image'
+  args: [
+    'push',
+    'europe-north2-docker.pkg.dev/vigilant-willow-484208-f0/sklearn-test/sklearn_image'
+  ]
+options:
+  logging: CLOUD_LOGGING_ONLY
