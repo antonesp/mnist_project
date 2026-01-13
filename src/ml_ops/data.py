@@ -42,9 +42,9 @@ def preprocess(raw_dir, processed_dir):
 
 def corrupt_mnist() -> tuple[torch.utils.data.Dataset, torch.utils.data.Dataset]:
     """Return train and test dataloaders for corrupt MNIST."""
-    
-    DATA_DIR = Path(__file__).resolve().parent / "data"
-    PROCESSED_DIR = Path(__file__).resolve().parents[2] / "data/processed"
+
+
+    PROCESSED_DIR = '/gcs/ml_ops_data_bucket_anton/'
     
     train_images = torch.load(f"{PROCESSED_DIR}/train_images.pt")
     train_target = torch.load(f"{PROCESSED_DIR}/train_target.pt")

@@ -13,7 +13,6 @@ COPY uv.lock uv.lock
 COPY ml_ops/requirements.txt ml_ops/requirements.txt
 COPY pyproject.toml pyproject.toml
 COPY ml_ops/src/ src/
-COPY ml_ops/data/ data/
 COPY ml_ops/models models/
 
 ENV UV_LINK_MODE=copy
