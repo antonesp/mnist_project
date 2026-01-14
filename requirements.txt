@@ -104,7 +104,7 @@ rfc3987-syntax==1.1.0
 rich==14.2.0
 rpds-py==0.30.0
 scikit-learn==1.8.0
-scipy==1.16.3
+scipy==1.17.0
 send2trash==2.0.0
 setuptools==80.9.0
 shellingham==1.5.4
